@@ -17,3 +17,15 @@ export const getWallet = () => {
   if (!caver.klay.accounts.wallet.length) return null
   return caver.klay.accounts.wallet[0]
 }
+
+///// 16진수 checksum주소로 변환
+export const toChecksumHexAddress = (address) => {
+  if (!address){
+    return '';
+  }
+  const hexPrefixed = caver.utils.addHexPrefix(address); //0x 접두사있는 16진수 문자열 반환
+  if (!caver.utils.isHexStrict(hexPrefixed)){
+    return hexPrefixed;
+  }
+  return caver.utils.addHexPrefix(address);
+}

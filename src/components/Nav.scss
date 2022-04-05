@@ -1,11 +1,34 @@
 .Nav {
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 0 0 auto;
+  align-items: center;
   width: 100%;
-  height: 75px;
-  position: sticky;
-  top: 0;
-  left: 0;
-  z-index: 100;
-  @include cardBox();
+  height: 9%;
+  position: relative;
+  z-index: 12;
+  //@include cardBox();
+
+  @media screen and (max-width: 575px) {
+    padding: 1rem;
+    z-index: 26;
+  }
+
+  @media screen and (min-width: 576px) {
+    height: 75px;
+    justify-content: center;
+
+    &--back-drop {
+      &::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 32px;
+        background: #f2f3f4;
+        bottom: -32px;
+      }
+    }
+  }
 }
 
 .Nav__inner {
@@ -14,8 +37,26 @@
   margin: 0 auto;
   padding: 0 20px;
   display: flex;
+  flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
+
+  @media screen and (max-width: 575px) {
+    height : 100%;
+  }
+
+  @media screen and (min-width: 576px) {
+    width: 85vw;
+  }
+
+  @media screen and (min-width: 769px) {
+    width: 80vw;
+  }
+
+  @media screen and (min-width: 1281px) {
+    width: 62vw;
+  }
+
 }
 
 .Nav__logo {
@@ -25,6 +66,9 @@
 
 .Nav__menus {
   display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+  flex-flow: row nowrap;
   justify-content: flex-end;
 }
 
@@ -35,6 +79,7 @@
   color: $brownish-grey;
   margin-left: 36px;
   cursor: pointer;
+  
 
   &::before {
     content: "";
@@ -48,7 +93,7 @@
 
   &:hover { text-decoration: underline; }
 
-  @include breakpoint("max-card") {
+  @media screen and (max-width: 674px) {
     width: 24px;
     height: 24px;
     overflow: hidden;
@@ -93,3 +138,4 @@
     font-size: 10px;
   }
 }
+

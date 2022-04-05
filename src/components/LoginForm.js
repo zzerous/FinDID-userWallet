@@ -16,8 +16,8 @@ class LoginForm extends Component {
     return (
       <div className="LoginForm">
         <h2 className="LoginForm__h2">
-          NextAuction<br />
-          Klaytn-Based NFT Auction Service
+          User DID Wallet<br />
+          Klaytn-Based DID Wallet Service
         </h2>
         <Button
           className="LoginForm__button"

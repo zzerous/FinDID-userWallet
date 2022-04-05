@@ -30,9 +30,9 @@ class App extends Component {
   render() {
     const { isLoggedIn, address  } = this.props
     return (
-      <div className="App">
+      <div className="app">
         <Modal />
-        {isLoggedIn && <Nav address={address} title="NextAuction"/>}
+        {isLoggedIn && <Nav address={address} title="D-Wallet"/>}
         {isLoggedIn ? <AuctionPage/> : <LoginPage/>}
       </div>
     )

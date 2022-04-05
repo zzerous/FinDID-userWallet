@@ -35,7 +35,7 @@ const klayDID =  new KlayDIDClient({
 
 const svcAddress = '0xd5addfadf499d81854bd55e91be4755e73b534de';
 const svcDID = 'did:kt:'+svcAddress.toLowerCase().substring(2);
-const privateKey = '0xfae0c518b26c52893d7c9175b96119b33e5e574110866d86fcc1fc17ea53a8af'; //옥션서비스 프라이빗 키
+const privateKey = '0x~'; //옥션서비스 프라이빗 키
 
 //판매자와 합의
 app.post('/transferAuth', async (req, res) => {

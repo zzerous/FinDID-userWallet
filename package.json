@@ -1,7 +1,7 @@
 {
-  "name": "nextauction",
+  "name": "did-wallet",
   "version": "0.0.1",
-  "description": "Klaytn-based NFT auction application",
+  "description": "Klaytn-based user did-wallet application",
   "main": "truffle-config.js",
   "type": "module",
   "scripts": {
@@ -12,8 +12,8 @@
   "repository": {
     "type": "git"
   },
-  "author": "developer@klaytn.com",
-  "license": "MIT",
+  "author": "zzerous",
+  "license": "",
   "dependencies": {
     "@babel/cli": "^7.15.7",
     "@material-ui/core": "^4.11.3",
@@ -25,6 +25,7 @@
     "cassandra-driver": "^4.6.3",
     "caver-js": "1.1.2",
     "classnames": "^2.2.5",
+    "copy-to-clipboard": "^3.3.1",
     "cors": "^2.8.5",
     "dotenv": "^6.0.0",
     "dotenv-webpack": "^1.5.7",

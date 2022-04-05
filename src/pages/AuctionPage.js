@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import AuctionFeed from 'components/AuctionFeed'
 import UserAuctionFeed from 'components/UserAuctionFeed'
 import AuctionButton from 'components/AuctionButton'
+import UserWallet from 'components/UserWallet'
 import './AuctionPage.scss'
 
 class AuctionPage extends Component {
@@ -12,7 +13,7 @@ class AuctionPage extends Component {
     console.log(isUserAuction);
     return (
       <main className="AuctionPage">
-        {isUserAuction ? <UserAuctionFeed/> : <AuctionFeed/>}
+        {isUserAuction ? <UserAuctionFeed/> : <UserWallet/>}
         {isUserAuction ? <AuctionButton/> : null}
       </main>    
     )

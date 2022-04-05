@@ -2,3 +2,6 @@ node_modules/
 build/
 dist/
 node_modules
+server/auc-server.js
+server/adminserver.js
+truffle-config.js

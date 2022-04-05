@@ -21,6 +21,13 @@ class Nav extends Component {
     this.setNetworkInfo()
   }
 
+  showAddressInfo = () => {
+    const {klaytn} = window
+    if (klaytn === undefined) return
+
+    klaytn.enable()
+  }
+
   setNetworkInfo = () => {
     const { klaytn } = window
     if (klaytn === undefined) return
@@ -41,16 +48,16 @@ class Nav extends Component {
           </h1>
           <div className="Nav__menus">
 
-            <button
+            {/* <button
               className="Nav__user"
               alt="User Auction"
               onClick={userAuction}
             
             >
               User Auction
-            </button>
+            </button> */}
 
-            <button
+            {/* <button
               className="Nav__wallet"
               alt="Wallet info"
               onClick={() => ui.showModal({
@@ -59,6 +66,12 @@ class Nav extends Component {
                   <WalletInfo address={address}/>
                 ),
               })}
+            > */}
+
+            <button
+              className="Nav__wallet"
+              alt="Wallet info"
+              onClick={this.showAddressInfo}
             >
               Wallet
             </button>
