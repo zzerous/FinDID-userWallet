@@ -1,0 +1,14 @@
+.identicon {
+    direction: ltr;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  
+    &__image-border {
+      border: 1px solid #dedede;
+      background: white;
+    }
+  }
+  

@@ -1,0 +1,17 @@
+.currency-display-component {
+    display: flex;
+    align-items: center;
+    font-size: 3rem;
+    line-height: 150%;
+
+    &__text {
+        direction: ltr;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &__suffix {
+        padding-left: 4px;
+    }
+}
