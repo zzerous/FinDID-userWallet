@@ -1,0 +1,23 @@
+.Checkbox {
+    position: relative;
+  }
+  
+  .Checkbox__label {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    color: $brown-grey;
+    margin-bottom: 2px;
+  }
+  
+  .Checkbox__claim {
+    width: 100%;
+    font-size: 14px;
+    padding: 12px 24px;
+    border-radius: 5px;
+  
+    &--final { color: $alert-red; font-weight: bold;}
+    &--err { border-color: $alert-red; }
+  }
+
+  

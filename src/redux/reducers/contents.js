@@ -1,6 +1,8 @@
 import { 
-SET_FEED, 
-REQ_CREDENTIAL,
+SET_FEED,
+SET_VC,
+SET_VP,
+SET_EP,
 REQ_ACCESSTOKEN,
 UPLOAD_CONTENT,
 DOWNLOAD_CONTENT
@@ -8,7 +10,9 @@ DOWNLOAD_CONTENT
 
 const initialState = {
   feed: null,
-  credential: null,
+  vc: null,
+  vp: null,
+  verifyEndPoint: null,
   accessToken: null,
   downloadCert: null,
   downloadToken: null,
@@ -21,10 +25,20 @@ const contentReducer = (state = initialState, action) => {
         ...state,
         feed: action.payload.feed,
       }
-    case REQ_CREDENTIAL:
-      return {
+    case SET_VC:
+      return{
         ...state,
-        credential: action.payload.credential,
+        vc: action.payload.vc,
+      }
+    case SET_VP:
+      return{
+        ...state,
+        vp: action.payload.vp,
+      }
+    case SET_EP:
+      return{
+        ...state,
+        verifyEndPoint: action.payload.verifyEndPoint,
       }
     case REQ_ACCESSTOKEN:
       return {

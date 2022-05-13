@@ -22,7 +22,7 @@ const Input = ({
         {label}
       </label>
     }
-    <input
+    <input      
       id={name}
       type={type || 'text'}
       name={name}

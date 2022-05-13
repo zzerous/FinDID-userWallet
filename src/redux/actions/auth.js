@@ -1,4 +1,5 @@
 import caver from 'klaytn/caver'
+
 import {
   LOGIN,
   LOGOUT,
@@ -39,5 +40,11 @@ export const logout = () => (dispatch) => {
   return dispatch({
     type: LOGOUT,
   })
+}
+
+export const getSign = (data) => async () => {
+  const address = klaytn.selectedAddress;
+  const signature = await caver.klay.sign(data, address)
+  return signature;
 }
 

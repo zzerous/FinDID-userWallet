@@ -1,8 +1,6 @@
 import React,{Component}  from 'react'
 import { connect } from 'react-redux'
-import WalletInfo from 'components/WalletInfo'
-import UploadTest from 'components/UploadTest'
-import DownloadTest from 'components/DownloadTest'
+import ServiceInfo from 'components/ServiceInfo'
 import ui from 'utils/ui'
 import cx from 'classnames'
 import {isNull} from 'lodash'
@@ -47,33 +45,17 @@ class Nav extends Component {
             {title}
           </h1>
           <div className="Nav__menus">
-
-            {/* <button
-              className="Nav__user"
-              alt="User Auction"
-              onClick={userAuction}
-            
-            >
-              User Auction
-            </button> */}
-
-            {/* <button
-              className="Nav__wallet"
-              alt="Wallet info"
-              onClick={() => ui.showModal({
-                header: 'Wallet Info',
-                content: (
-                  <WalletInfo address={address}/>
-                ),
-              })}
-            > */}
-
             <button
               className="Nav__wallet"
-              alt="Wallet info"
-              onClick={this.showAddressInfo}
+              alt="Service Info"
+              onClick={() => ui.showModal({
+                header: 'Available Service',
+                content: (
+                  <ServiceInfo />
+                ),
+              })}
             >
-              Wallet
+              Service
             </button>
 
             <button

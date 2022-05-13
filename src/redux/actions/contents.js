@@ -2,9 +2,13 @@ import object from 'klaytn/Contracts' //1. contract instance import
 import { feedParser } from 'utils/misc'
 import axios from 'axios'
 const StorageContract = object.StorageContract
+const MY_SERVER = 'http://203.250.77.156:9000';
 
 import {
   SET_FEED,
+  SET_VC,
+  SET_VP,
+  SET_EP,
   REQ_CREDENTIAL,
   REQ_ACCESSTOKEN,
   DOWNLOAD_CONTENT,
@@ -57,6 +61,50 @@ export const getFeed = () => async (dispatch) => {
     })
     .then((feed) => dispatch(setFeed(feedParser(feed))))
 }
+
+const setVC = (vc) => ({
+  type: SET_VC,
+  payload: { vc },
+})
+
+const setVP = (vp) => ({
+  type: SET_VP,
+  payload: { vp },
+})
+
+export const setEndPoint = (verifyEndPoint) => async (dispatch) => {
+  console.log(verifyEndPoint)
+  return dispatch({
+    type: SET_EP,
+    payload: {
+      verifyEndPoint: verifyEndPoint,
+    },
+  })
+}
+
+export const getFiles = (type, addr) => async (dispatch) => {
+  //type: VC or VP
+  const path = `/home/young/klaytn-wallet/did-wallet/static/${type}/${addr}/`;
+  const vcList = await fetch(`${MY_SERVER}/get-filelist?path=${path}`);
+  const commits = await vcList.json();
+  //console.log(commits.filelist); //array
+
+  let vcs = [];
+  let vps = [];
+  for (let i = 0; commits.filelist.length > i; i++){
+    const filePath = `${path}${commits.filelist[i]}`
+    const res = await fetch(`${MY_SERVER}/get-file?path=${filePath}`);
+    const file = await res.json();
+    {type=="VC" ? vcs.push(file) : vps.push(file)}
+  }
+
+  if(type=="VC"){
+    return dispatch(setVC(vcs));
+  } else {
+    return dispatch(setVP(vps));
+  }
+}
+
 
 export const requestCredential = (
   signature, 

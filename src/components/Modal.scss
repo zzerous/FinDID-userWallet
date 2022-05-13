@@ -11,7 +11,7 @@
 .Modal {
   @include fixed-center();
   @include cardBox();
-  width: 100%;
+  width: 50%;
   max-width: $info-card-width;
   // @include breakpoint("max-card") {
   //   width: 95%;
@@ -29,9 +29,9 @@
 .Modal__body {
   @include clear-both();
   padding: 24px 24px;
-  column-rule: 1px solid $light-grey;
-  column-gap: 50px;
-  column-count:2;
+  // column-rule: 1px solid $light-grey;
+  // column-gap: 50px;
+  // column-count:2;
   
 }
 

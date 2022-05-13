@@ -3,7 +3,7 @@ import object from 'klaytn/Contracts'
 import { connect } from 'react-redux'
 import ui from 'utils/ui'
 import Loading from 'components/Loading'
-import ContentInfo from 'components/ContentInfo'
+//import ContentInfo from 'components/ContentInfo'
 import AuctionInfo from 'components/AuctionInfo'
 
 import * as aucActions from 'redux/actions/auctions'
@@ -106,12 +106,12 @@ class AuctionFeed extends Component {
                   <img 
                   src={SRC} alt="image" />
                 </div>
-                <div className="FeedItem__info">
+                {/* <div className="FeedItem__info">
                   <ContentInfo
                     name={auctionName}
                     issueDate={expTime}
                   />
-                </div>
+                </div> */}
               </div>
             )
           })

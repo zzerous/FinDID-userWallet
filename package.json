@@ -7,7 +7,7 @@
   "scripts": {
     "build": "webpack --config webpack.prod.js",
     "start": "serve ./dist -p 8000",
-    "local": "webpack-dev-server --config webpack.dev.js"
+    "local": "webpack-dev-server --config webpack.dev.js "
   },
   "repository": {
     "type": "git"
@@ -21,21 +21,23 @@
     "FormData": "^0.10.1",
     "atob": "^2.1.2",
     "axios": "^0.21.1",
-    "body-parser": "^1.19.0",
+    "body-parser": "^1.20.0",
     "cassandra-driver": "^4.6.3",
     "caver-js": "1.1.2",
     "classnames": "^2.2.5",
     "copy-to-clipboard": "^3.3.1",
     "cors": "^2.8.5",
+    "did-auth-lowversion": "^1.0.1",
     "dotenv": "^6.0.0",
     "dotenv-webpack": "^1.5.7",
     "download-file": "^0.1.5",
-    "express": "^4.17.1",
-    "express-fileupload": "^1.2.1",
+    "express": "^4.17.3",
+    "express-fileupload": "^1.3.1",
     "express-formidable": "^1.2.0",
     "file-saver": "^2.0.5",
     "fs": "0.0.1-security",
     "js-file-download": "^0.4.12",
+    "keccak256": "^1.0.6",
     "klay-did-auth": "^1.0.0",
     "material-ui": "^0.20.2",
     "moment": "^2.29.1",
@@ -54,6 +56,7 @@
     "redux-thunk": "^2.3.0",
     "request": "^2.88.2",
     "scrypt": "github:barrysteyn/node-scrypt#fb60a8d3c158fe115a624b5ffa7480f3a24b03fb",
+    "secp256k1": "^4.0.3",
     "sha3": "^2.1.3",
     "tls": "0.0.1",
     "truffle-hdwallet-provider-klaytn": "^1.0.13-a",

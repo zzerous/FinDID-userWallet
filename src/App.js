@@ -32,7 +32,7 @@ class App extends Component {
     return (
       <div className="app">
         <Modal />
-        {isLoggedIn && <Nav address={address} title="D-Wallet"/>}
+        {isLoggedIn && <Nav address={address} title="Wallet"/>}
         {isLoggedIn ? <AuctionPage/> : <LoginPage/>}
       </div>
     )

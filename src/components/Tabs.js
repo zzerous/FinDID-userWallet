@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import classnames from 'classnames';
+import './Tabs.scss'
 
 export default class Tabs extends Component {
   static defaultProps = {
@@ -8,6 +9,10 @@ export default class Tabs extends Component {
     tabsClassName: undefined,
   };
 
+  componentWillMount(){
+    const { defaultActiveTabName } = this.props
+    console.log(defaultActiveTabName);  
+  }
   state = {
     activeTabIndex: Math.max(
       this._findChildByName(this.props.defaultActiveTabName),
@@ -85,12 +90,14 @@ export default class Tabs extends Component {
    * @private
    */
   _findChildByName(name) {
-    return this._getValidChildren().findIndex((c) => c?.props.name === name);
+    return this._getValidChildren().findIndex((c) => {
+      //console.log(c?.props);
+      c?.props.name === name
+    });
   }
 
-  // This ignores any 'null' child elements that are a result of a conditional
-  // based on a feature flag setting.
+  // This ignores any 'null' child elements that are a result of a conditional based on a feature flag setting.
   _getValidChildren() {
-    return React.Children.toArray(this.props.children).filter(Boolean);
+    return React.Children.toArray(this.props.children).slice(1,3).filter(Boolean);
   }
 }
